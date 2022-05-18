@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch test</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;900&display=swap"
+    rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300&display=swap"
+    rel="stylesheet"/>
+</head>
+<body>
+  <div class="stopwatch">
+    <h1>
+      <span class="test">TEST</span> STOPWATCH
+    </h1>
+    <div class="circle">
+      <span class="time" id="display">
+        00:00:00
+      </span>
+    </div>
+
+    <div class="controls">
+      <button class="buttonPlay">
+        <Img id="playButton" src="./img/play.PNG" />
+
+        <Img id="pauseButton" src="./img/pause.PNG" />
+      </button>
+
+      <button class="resetButton">
+        <Img id="resetButton" src="./img/reset.svg" />
+      </button>
+    </div>
+  </div>
+    <script src="/app.js"></script>
+    <script src="/index.js"></script>
+    <!-- include jquery and bootstrap js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ 
+  <!-- include sweetalert for displaying dialog messages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</body>
+</html>

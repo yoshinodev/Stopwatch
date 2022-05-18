@@ -1,0 +1,27 @@
+{
+  "name": "stopwatch",
+  "version": "1.0.0",
+  "description": "this is the data file from stopwacth by Anaïs Gilbert",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoshinodev/Stopwatch.git"
+  },
+  "keywords": [
+    "data",
+    "stopwatch",
+    "record"
+  ],
+  "author": "Anaïs Gilbert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoshinodev/Stopwatch/issues"
+  },
+  "homepage": "https://github.com/yoshinodev/Stopwatch#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
