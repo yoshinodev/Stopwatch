@@ -58,11 +58,8 @@ function reset() {
   showButton("PLAY");
 }
 
-
-let date = Date.now();
 function save() {
   clearInterval(timerInterval);
-  
 }
 
 // Create function to display buttons
@@ -83,9 +80,12 @@ let saveButton = document.getElementById("saveButton");
 playButton.addEventListener("click", start);
 pauseButton.addEventListener("click", pause);
 resetButton.addEventListener("click", reset);
+const today = Date.now().toString;
+
 saveButton.addEventListener('click', async event =>  {
   save()
   let savedData = timeToString(elapsedTime);
+  let date = Date.now();
   const data = { savedData, date };
   const options = {
     method: 'POST',
