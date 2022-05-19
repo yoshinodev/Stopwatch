@@ -10,6 +10,7 @@ var db = mysql.createConnection({
     user     : 'root',
     password : 'root',
     multipleStatements: true,
+    dateStrings: true,
     database : 'codingtestedb'
 });
 
@@ -50,4 +51,5 @@ try{
   console.log(err);
   return res.send();
 }
+console.log("SUCCESS! NEW RECORD...")
 });

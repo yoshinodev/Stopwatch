@@ -21,8 +21,23 @@ function timeToString(time) {
   return `${formattedHH}:${formattedMM}:${formattedSS}`;
 }
 
+// formated date
 
+let today = new Date();
+let dd = today.getDate();
 
+let mm = today.getMonth()+1;
+const yyyy = today.getFullYear();
+if(dd<10)
+{
+    dd=`0${dd}`;
+}
+
+if(mm<10)
+{
+    mm=`0${mm}`;
+}
+today = `${dd}/${mm}/${yyyy}`;
 // Declare variables to use in our functions below
 
 let startTime;
@@ -80,12 +95,12 @@ let saveButton = document.getElementById("saveButton");
 playButton.addEventListener("click", start);
 pauseButton.addEventListener("click", pause);
 resetButton.addEventListener("click", reset);
-const today = Date.now().toString;
+
 
 saveButton.addEventListener('click', async event =>  {
   save()
   let savedData = timeToString(elapsedTime);
-  let date = Date.now();
+  let date = today;
   const data = { savedData, date };
   const options = {
     method: 'POST',
