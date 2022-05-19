@@ -23,51 +23,31 @@ db.connect((err) => {
 module.exports = db;
 
 const app = express();
-
+app.use(express.json());
 
 app.listen(3000, () => console.log('listening at 3000'));
 app.use(express.static('../public'));
 app.use(express.json({ limit: '1mb' }));
-app.use(bodyParser.json());
 
-//let data = "INSERT into codingData(savedData, date) VALUES ('duration', 'day')";
-/*app.get('/', (request, response) => {
-  db.query("SELECT * FROM record",
-  (err, results, fields) => {
-      if (!err) {
-        res.send(results);
-      } else {
-        console.log(err);
-      }
-    }
-  );
-});
-app.post("/", (req, res) => {
-  let bro = req.body;
-  const data =
-    "SET @ID = ?;SET @Duration = ?;SET @Day = ?;";
+app.post("/create", async (req, res) => {
+  const { savedData, date } = req.body;
+
+try{
   db.query(
-    data,
-    [
-      bro.ID,
-      bro.Duration,
-      bro.Day,
-    ],
-    (err, result, fields) => {
-      if (err) { 
-        throw err;}
-      console.log("aqui esta a funcionar parcialmente");
+    "INSERT INTO record (Duration, Day) VALUES (?, ?)",
+    [savedData, date],
+    (err, results, fields) =>{
+      if (err) {
+        console.log("Error while inserting a record into the database...", err);
+        return res.send();
       }
-  );
-});*/
- app.post('/api', (request, response) => {
-  const data = request.body;
-  response.json(data);
-  db.query(data, (err, result) => {
-    if(err) {
-        response.status(500);
-    } else {
-      response.send(data);
+
+      return res
+      .json({ message: "new record successfully created!" });
     }
-});
+  );
+} catch (err) {
+  console.log(err);
+  return res.send();
+}
 });
