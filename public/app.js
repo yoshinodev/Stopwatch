@@ -21,6 +21,8 @@ function timeToString(time) {
   return `${formattedHH}:${formattedMM}:${formattedSS}`;
 }
 
+
+
 // Declare variables to use in our functions below
 
 let startTime;
@@ -56,6 +58,13 @@ function reset() {
   showButton("PLAY");
 }
 
+
+let date = Date.now();
+function save() {
+  clearInterval(timerInterval);
+  
+}
+
 // Create function to display buttons
 
 function showButton(buttonKey) {
@@ -69,7 +78,23 @@ function showButton(buttonKey) {
 let playButton = document.getElementById("playButton");
 let pauseButton = document.getElementById("pauseButton");
 let resetButton = document.getElementById("resetButton");
+let saveButton = document.getElementById("saveButton");
 
 playButton.addEventListener("click", start);
 pauseButton.addEventListener("click", pause);
 resetButton.addEventListener("click", reset);
+saveButton.addEventListener('click', async event =>  {
+  save()
+  let savedData = timeToString(elapsedTime);
+  const data = { savedData, date };
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  };
+  const response = await fetch('/api', options);
+  const json = await response.json();
+  console.log(json);
+});
