@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-darkreader-mode="dinamic" data-darkreader-scheme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,23 +16,40 @@
       <span class="test">TEST</span> STOPWATCH
     </h1>
     <div class="circle">
-      <span class="time" id="display">
+      <span class="time" id="display" alt="display time spent">
         00:00:00
       </span>
     </div>
 
     <div class="controls">
       <button class="buttonPlay">
-        <Img id="playButton" src="./img/play.PNG" />
+        <Img id="playButton" src="./img/play.PNG" alt="Play button" />
 
-        <Img id="pauseButton" src="./img/pause.PNG" />
+        <Img id="pauseButton" src="./img/pause.PNG" alt="Pause button" />
       </button>
       <button id="saveButton">Save</button>
       <button class="resetButton">
-        <Img id="resetButton" src="./img/reset.svg" />
+        <Img id="resetButton" src="./img/reset.svg" alt="Reset Button" />
       </button>
     </div>
   </div>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Record</h2>
+      </div>
+      <div class="modal-body">
+        <p>Your data record was successfully saved!</p>
+      </div>
+      <div class="modal-footer">
+        <h3>Made with love</h3>
+      </div>
+    </div>
+  </div>
+  
     <script src="/app.js"></script>
     <script src="/index.js"></script>
     <!-- include jquery and bootstrap js -->
