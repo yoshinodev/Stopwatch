@@ -136,3 +136,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// When the user pretend to leave page
+window.onbeforeunload = s => "";

@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config()
 const bodyParser = require("body-parser");
 var mysql = require('mysql');
 
@@ -27,6 +28,7 @@ const app = express();
 app.use(express.json());
 
 app.listen(3000, () => console.log('listening at 3000'));
+
 app.use(express.static('../public'));
 app.use(express.json({ limit: '1mb' }));
 
@@ -53,3 +55,4 @@ try{
 }
 console.log("SUCCESS! NEW RECORD...")
 });
+

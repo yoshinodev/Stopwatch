@@ -1,0 +1,1 @@
+need to add condition to save time to database if closed
