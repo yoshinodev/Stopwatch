@@ -43,6 +43,8 @@ body {
   
     padding: 0 64px;
     margin: 0;
+    border: 1px solid;
+    margin-bottom: 20px;
   }
   
   .stopwatch {
@@ -58,11 +60,12 @@ body {
     justify-content: center;
     align-items: center;
   
-    height: 270px;
-    width: 270px;
+    height: 240px;
+    width: 260px;
   
-    border: 2px solid;
-    border-radius: 50%;
+    /*border: 2px solid;*/
+    border-radius: 69% 55% 35% 67% / 72% 57% 50% 36%;
+    background: #f6f6;
   }
   
   .time {
@@ -78,6 +81,15 @@ body {
     width: 187px;
   }
   
+  #saveButton {
+    color: #111314;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 700;
+    background: rgba(243, 181, 243, 0.768);
+  }
   button {
     cursor: pointer;
     background: transparent;
