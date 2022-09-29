@@ -7,12 +7,12 @@ var mysql = require('mysql');
 
 // Create connection
 var db = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'root',
+    host     : 'yourHostNameHere',
+    user     : 'YOURUSERHERE',
+    password : 'YOURPASSWORDHERE',
     multipleStatements: true,
     dateStrings: true,
-    database : 'codingtestedb'
+    database : 'yourDbHere'
 });
 
 // Connect
