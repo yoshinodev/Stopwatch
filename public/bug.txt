@@ -1,2 +1,0 @@
-corrigir bug, dados só são gravados se o server estiver aberto
-- modificar a situação
